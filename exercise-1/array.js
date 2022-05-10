@@ -1,14 +1,24 @@
+
+// Exercise 1
+// Write a JavaScript function to sort three numbers in array. Return sorted array. 
+// Sample numbers : [0, -1, 4] 
+// Output : [4, 0, -1] 
+// notes:
+//     https://www.geeksforgeeks.org/javascript-array-sort/
+//     https://www.w3schools.com/jsref/met_win_alert.asp
+
+
+// 1. write function ==> function will take array as input
+// 2.Sort the numbers inside the array and return sorted array
+
+function sortedArray(array) {
+    return array.sort(function (a,b) {
+        return b - a;
+    })
+}
+console.log(sortedArray([5, 7, 10, -10, 56])); // ==> 56, 10, 7, 5, -10
 /*
-Exercise 1
-Write a JavaScript function to sort three numbers in array. Return sorted array. 
-Sample numbers : [0, -1, 4] 
-Output : [4, 0, -1] 
-notes:
-    https://www.geeksforgeeks.org/javascript-array-sort/
-    https://www.w3schools.com/jsref/met_win_alert.asp
-
 Exercise 2
-
 Write a JavaScript function to find the largest of five numbers of array.  
 Sample numbers : -5, -2, -6, 0, -1 
 Output : 0 
@@ -85,3 +95,10 @@ Example:
 > 1
 
 */
+
+
+// const array = [1, 2, 3, 4, 5];
+// const newArray = array.map(function (element) {
+//   return element + 5;
+// });
+// console.log(newArray);
