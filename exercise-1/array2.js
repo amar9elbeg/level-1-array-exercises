@@ -137,19 +137,33 @@ console.log(totalPopulation(zooAnimals));
 // The consume function should return the invocation of cb, passing a and b into cb as arguments
 
 function invocation(value, valueTwo) {
-  alert(`${value} ${valueTwo} ok`)
-}
-function consume(callback) {
-  callback(arguments[0], arguments[1])
-}
-console.log(consume("wow", "damn", invocation));
-
+  return `${value} ${valueTwo} ok`;
+};
+function add(num, num2) {
+return num + num2;
+};
+function multiply(num, num2) {
+  return num * num2;
+};
+function greetings(firstName, lastName) {
+  return `Hello ${firstName} ${lastName} nice to meet you!`
+};
+function consume(str1, str2, callback) {
+  return callback(str1, str2);
+};
+console.log(consume("wow", "dang", invocation));
+console.log(consume(4, 160, add));
+console.log(consume(4, 160, multiply));
+console.log(consume("Mary", "Poppins", greetings));
 // Step 2: Create several functions to callback with consume();
 // Create a function named add that returns the sum of two numbers
 // Create a function named multiply that returns the product of two numbers
 // Create a function named greeting that accepts a first and last name and returns "Hello
 // first-name last-name, nice to meet you!"
 
+
+
 //  Step 3: Check your work by un-commenting the following calls to consume():
 // 4
-// 160Hello Mary Poppins, nice to meet you!
+// 160
+// Hello Mary Poppins, nice to meet you!
