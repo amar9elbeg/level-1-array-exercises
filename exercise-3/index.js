@@ -41,6 +41,16 @@ Your function should return a boolean TRUE if the length of the array is 31 and 
 To save you from having to count the items above, you can assume that length of originalFlavors is 31. You may also want to test your function by creating and passing an array of a different length, to make sure it returns FALSE if length is not 31. 
 
 i.e. is31Flavors(originalFlavors) will return TRUE.*/
+function flavors(array) {
+  if (Object.keys(array).length === 31) {
+    return true;
+  } else {
+    return false;
+  };
+};
+console.log(flavors(originalFlavors));
+
+// console.log(Object.keys(originalFlavors).length);
 
 /* Task 2: Corporate has come to you with an idea for a new flavor: Rainbow Sherbert! They think this will be a game changer. You need to modify the array to include this flavor. 
 
@@ -53,6 +63,12 @@ Your function should add the flavor to the front of the array and console.log th
 
 For example addFlavor("Rainbow Sherbert", originalFlavors) should return ["Rainbow Sherbert", "Banana Nut Fudge",..."Vanilla Burnt Almond"] */
 
+function addFlavor(array) {
+  array.unshift("Rainbow Sherbert");
+  return array;
+};
+console.log(addFlavor(originalFlavors));
+
 /* Task 3: Houston, we have a problem! There are now 32 flavors in the array! Your task is to remove an item from the end of the array. 
 
 Your function should accept:
@@ -63,6 +79,11 @@ Your function should remove a flavor from the end of the array and console.log t
 
 For example removeLastFlavor(originalFlavors) would return ["Rainbow Sherbert", "Banana Nut Fudge",..."Vanilla"]*/
 
+function removeLastFlavor(array) {
+  array.pop();
+  return array;
+};
+console.log(removeLastFlavor(originalFlavors));
 /* Task 4: Write a function that returns a flavor at a given index in the array.
 
 Your function should accept:
@@ -72,7 +93,13 @@ Your function should accept:
 
 For example, getFlavorByIndex(originalFlavors, 2) would return "Black Walnut", assuming Rainbow Sherbert has been added successfully. */
 
-/* Task 5: As corporate wants to add more and more flavors to their lineup, they've realized that they need to remove flavors based on flavor name, as opposed to just arbitrarily removing the first or last flavor. Your task is to get an index by flavor name, and remove that flavor from the array. 
+function getFlavorByIndex(array) {
+  return array.at(0);
+};
+console.log(getFlavorByIndex(originalFlavors));
+
+/* Task 5: As corporate wants to add more and more flavors to their lineup, they've realized that they need to remove flavors based on flavor name, as opposed to just arbitrarily removing the first or last flavor.
+ Your task is to get an index by flavor name, and remove that flavor from the array. 
 
 Your function should accept: 
 
@@ -82,8 +109,13 @@ Your function should accept:
 For example, removeFlavorByName(originalFlavors, "Vanilla") would return an array with the length 30 including all of the flavors except Vanilla. 
 
 Hint: You can use .splice() for this
-
 */
+
+function removeFlavorByName(array, string) {
+  array.splice(array.indexOf(string));
+  return array;
+};
+console.log(removeFlavorByName(originalFlavors, "Vanilla"));
 
 /* Task 6: With all of these changes going on, we don't want to lose track of the actual, original 31 flavors. Write a function called copy that makes a copy of the array. 
 
@@ -93,7 +125,14 @@ Your function should accept:
 
 and should return a new array that is identical to the old array. You can name the new array however you'd like. */
 
-/* Task 7: July 7th is "World Chocolate Day" and Baskin Robins wants to create promotional materials highlighting all of their chocolate flavors. Write a function that checks every item in the array for a given string and returns a new array called filteredArray with just these values. Rather than hardcoding "chocolate" into your function, pass a string as a parameter, and invoke with the argument "chocolate". This way you could also filter for "Vanilla", "Sherbert", etc. when those holidays roll around.
+function originalFlavorCopy(original, clone) {
+  clone = original.slice()
+  return clone
+}
+console.log(originalFlavorCopy(originalFlavors));
+/* Task 7: July 7th is "World Chocolate Day" and Baskin Robins wants to create promotional materials highlighting all of their chocolate flavors. Write a function that checks every item in the array for a given string and returns
+ a new array called filteredArray with just these values. Rather than hardcoding "chocolate" into your function, pass a string as a parameter, and invoke with the argument "chocolate". This way you could also filter for "Vanilla", 
+ "Sherbert", etc. when those holidays roll around.
 
 Your function should accept: 
 
@@ -107,6 +146,30 @@ For example, filterByWord(originalFlavors, "Chocolate") should return ["Chocolat
 DO NOT USE ADVANCED ARRAY METHODS (i.e. .filter) to solve this problem.
 
 hint - you can use the .includes method to help you solve this */
+
+function filterByWord(array, string) {
+  // const filteredArray = array.splice(array.indexOf(string));
+
+  return array 
+};
+console.log(filterByWord(originalFlavors, "Chocolate"))
+
+
+
+
+// deleteElementsFromArray = function(elements, ...values) {
+//   let elementRemoved = Array.from(values);
+//   for (var index = 0; index < elements.length; index++){
+//      if (elementRemoved.includes(elements[index])){
+//         elements.splice(index, 1);
+//         index--;
+//      }
+//   }
+//   return elements;
+// }
+
+
+
 
 /* 🧁🍦🍨 STRETCH 🍨🍦🍫*/
 
@@ -124,7 +187,17 @@ function getAverageWordLength(/*code here*/) {
   /*code here*/
 }
 
-/* STRETCH 2: Baskin Robins now offers new flavors, seasonal flavors, and even regional flavors. Write a function that will randomly select a total of 31 flavors from originalFlavors, currentFlavors, seasonalFlavors, and regionalFlavors.
+function getAverageWordLength(array) {
+  let lengths = array.map(function(word) {
+    return word.length;
+  })
+  avg = lengths.join(' ').length / array.length
+  return avg
+}
+console.log(getAverageWordLength(originalFlavors))
+
+/* STRETCH 2: Baskin Robins now offers new flavors, seasonal flavors, and even regional flavors. Write a function that will randomly select a total of 31 flavors from originalFlavors, currentFlavors, seasonalFlavors,
+ and regionalFlavors.
 
 Your function should accept 4 different arrays,
 
@@ -211,6 +284,7 @@ var regionalFlavors = [
   "Caramel 'n' Cookies",
 ];
 
-function getRandomFlavors(/*code here*/) {
-  /*code here*/
+function getRandomFlavors(array, arrayTwo, arrayThree, arrayFour) {
+  
 }
+console.log(getRandomFlavors(originalFlavors, newFlavors, seasonalFlavors, regionalFlavors))
