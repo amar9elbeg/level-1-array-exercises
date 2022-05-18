@@ -41,6 +41,9 @@ Your function should return a boolean TRUE if the length of the array is 31 and 
 To save you from having to count the items above, you can assume that length of originalFlavors is 31. You may also want to test your function by creating and passing an array of a different length, to make sure it returns FALSE if length is not 31. 
 
 i.e. is31Flavors(originalFlavors) will return TRUE.*/
+
+// find a method to count how many properties an array has and check to see if the length is equal to 31 
+
 function flavors(array) {
   if (Object.keys(array).length === 31) {
     return true;
@@ -63,6 +66,8 @@ Your function should add the flavor to the front of the array and console.log th
 
 For example addFlavor("Rainbow Sherbert", originalFlavors) should return ["Rainbow Sherbert", "Banana Nut Fudge",..."Vanilla Burnt Almond"] */
 
+// how to add string to array
+
 function addFlavor(array, flavor) {
   return array.unshift(flavor);
 }
@@ -78,6 +83,8 @@ Your function should remove a flavor from the end of the array and console.log t
 
 For example removeLastFlavor(originalFlavors) would return ["Rainbow Sherbert", "Banana Nut Fudge",..."Vanilla"]*/
 
+// how to remove last element from array
+
 function removeLastFlavor(array) {
   return array.pop();
 }
@@ -90,6 +97,8 @@ Your function should accept:
 (2) an index
 
 For example, getFlavorByIndex(originalFlavors, 2) would return "Black Walnut", assuming Rainbow Sherbert has been added successfully. */
+
+// how to get value of at a specific index of array
 
 function getFlavorByIndex(array, index) {
   return array.at(index);
@@ -109,6 +118,8 @@ For example, removeFlavorByName(originalFlavors, "Vanilla") would return an arra
 Hint: You can use .splice() for this
 */
 
+// add array as argument for splice() and find out how to remove the index of "Vanilla"
+
 function removeFlavorByName(array, string) {
   array.splice(array.indexOf(string));
   return array;
@@ -122,6 +133,9 @@ Your function should accept:
 2 arguments 1 for your new array and one for your original array
 
 and should return a new array that is identical to the old array. You can name the new array however you'd like. */
+
+// declare new array and transfer the originalFlavors properties to the new array
+
 const newArray = [];
 function originalFlavorCopy(newArray, original) {
   return newArray.push(original);
@@ -145,13 +159,9 @@ DO NOT USE ADVANCED ARRAY METHODS (i.e. .filter) to solve this problem.
 
 hint - you can use the .includes method to help you solve this */
 
+// find out how to filter the array by the given variable.
+
 function filterByWord(array, string) {
-  // const filteredArray = array.map((object) => {
-  //   if (object.includes(string)) {
-  //     return object;
-  //   }
-  // });
-  // return filteredArray.filter((object) => object !== undefined);
   return array.filter((object) => {
     if (object.includes(string)) {
       return object;
@@ -176,11 +186,15 @@ function getAverageWordLength(/*code here*/) {
   /*code here*/
 }
 
+// declare a array that contains all the lengths of the properties of originalFlavors by using a certain method and creating a function that returns the length of the properties.
+// declare new variable that contains the average length off all words in the originalFlavors array.
+// to do this, convert the declared length array into string and divide it by the length of originalFlavors
+
 function getAverageWordLength(array) {
   let lengths = array.map(function (word) {
     return word.length;
   });
-  avg = lengths.join(" ").length / array.length;
+  const avg = lengths.join(" ").length / array.length;
   return avg;
 }
 console.log(getAverageWordLength(originalFlavors));
@@ -273,6 +287,14 @@ var regionalFlavors = [
   "Caramel 'n' Cookies",
 ];
 
+// your function will need 4 arguments, 1 argument for the random flavor array and the other 3 for the list of all the flavors
+// first convert the three array containing all the flavors into one big array
+// Now declare a new empty array for the random flavor items
+// since it needs to be done 31 times, iterate it 31 times using method of your choice
+// declare a variable in the iterator method which will equal to the randomly generated number within the length of the ultimate array
+// to do this you will need a random number method and a rounder method to round it to a whole integer
+// lastly, you will use the random number variable as your ultimate array's index number and transfer that to the declared empty array
+
 function getRandomFlavors(array, arrayTwo, arrayThree, arrayFour) {
   const ultimateArray = array.concat(arrayTwo, arrayThree, arrayFour);
 
@@ -281,7 +303,7 @@ function getRandomFlavors(array, arrayTwo, arrayThree, arrayFour) {
     const randomNumber = Math.floor(Math.random() * ultimateArray.length);
     randomFlavorItems.push(ultimateArray[randomNumber]);
   }
-  return randomFlavorItems;
+  return randomFlavorItems
 }
 console.log(
   getRandomFlavors(

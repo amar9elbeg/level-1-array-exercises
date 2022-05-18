@@ -11,6 +11,10 @@ console.log("its working");
 (d) Away Team goals for 2014 world cup final
 (e) Winner of 2014 world cup final */
 
+// declare a new variable which equals to fifa.js data filtered by year 2014
+// declare a new variable equal to the filtered year variable filtered by stage called "Final"
+// lastly console.log the filtered final variable with its first index and the desired piece of data in array
+
 const years = fifaData.filter((yr) => {
   return yr.Year === 2014;
 });
@@ -24,6 +28,8 @@ console.log(final[0]["Win conditions"]);
 /* Task 2: Create a function called getFinals that takes `data` as an argument and returns an array of 
 objects with only finals data */
 
+// kind of the same thing as before, where you filtered the 2014 matches by stage but this time its in a function and its not only limited to the year 2014
+
 function getFinals(data) {
   const final = data.filter((stg) => {
     return stg.Stage === "Final";
@@ -34,6 +40,12 @@ console.log(getFinals(fifaData));
 
 /* Task 3: Implement a higher-order function called `getYears` that accepts the callback function `getFinals`,
 and returns an array called `years` containing all of the years in the dataset */
+
+// use the getFinals data from before as the argument for getYears function
+// declare a new variable equaling to the callback function with its argument
+// finally declare a new variable which will equal to the years
+// we can do that by first getting access to the finals data and getting the desired element from all the elements.
+
 function getYears(callback) {
   const finals = callback(fifaData);
   const years = finals.map((fnl) => {
@@ -46,21 +58,45 @@ console.log(getYears(getFinals));
 /* Task 5: Implement a higher-order function called `getWinners`, that accepts the callback function 
 `getFinals()` and determine the winner (home or away) of each `finals` game. Return the name of all winning 
 countries in an array called `winners` */
+
+// first declare new variable and make it equal to the callback (add the argument for the callback while u at it)
+// declare another variable called winners (given) and then use a method that gives you access to properties of variable on the first variable
+// creat a function in the method
+// function will get the total goals of both teams and then see who got more
+// whoever got more goals gets their home team name returned
+
 function getWinners(callback) {
   const finals = callback(fifaData)
   const winners = finals.map((fnl) => {
-    let wnr = fnl["Home Team Name"]
-    return wnr
+    const hmGoals = fnl["Home Team Goals"] + fnl["Half-time Home Goals"];
+    const awGoals = fnl["Away Team Goals"] + fnl["Half-time Away Goals"];
+    if (hmGoals > awGoals) {
+      return fnl["Home Team Name"];
+    } 
+    if (awGoals > hmGoals) {
+      return fnl["Away Team Name"]
+    }
   })
   return winners
-}
+} 
 console.log(getWinners(getFinals))
 // Task 6: Implement a higher-order function called `getWinnersByYear` that accepts the following parameters 
 // and returns a set of strings "In {year}, {country} won the world cup!" 
+
+// declare variables equal to the callback functions (add arguments)
+// use template literals
+
 function getWinnersByYear(wnr, yr) {
-  const winner = wnr(getFinals)
+  const country = wnr(getFinals)
   const year = yr(getFinals)
-  return `In ${year}, ${winner} won the world cup!`;
+  // const country = winner.map((wnr) => {
+  //   let wncr = wnr.s
+  // })
+  // const year = winner.map((wnr) => {
+  //   let wnyr = wnr.Year
+  //   return wnyr
+  // })
+  return `In ${year}, ${country} won the world cup!`;
 }
 console.log(getWinnersByYear(getWinners, getYears))
 
@@ -71,6 +107,10 @@ console.log(getWinnersByYear(getWinners, getYears))
 /* Task 7: Write a function called `getAverageGoals` that accepts a parameter `data` and returns the the 
 average number of home team goals and away team goals scored per match 
 (Hint: use .reduce and do this in 2 steps) */
+
+// declare variables equal to home team goals and away team goals
+// find average by adding all the goals together using a "certian" method that has a starting point and ending point.
+// after that just divide by the length of the goals and finish it off with template literals
 
 function getAverageGoals(data) {
   const awGoals = data.map((dt) => {

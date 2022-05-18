@@ -73,6 +73,9 @@ in front of the habitats. Populate the displayNames array with only the
  should follow this pattern: "Name: Jackal, asiatic, Scientific: Canis aureus."
 */
 
+// Use the method used in previous exercises to access the values of the argument
+// In the method, create a function that uses template literals to access the animal_name and scientific_name in a string
+
 function nameFunction(array) {
   return array.map((arr) => {
     return `Name: ${arr.animal_name}, asiatic, Scientific: ${arr.scientific_name}.`;
@@ -84,10 +87,13 @@ The zoos need a list of all their animal's names (animal_name only) converted to
  Using map, create a new array of strings named lowCaseAnimalNames,
   each string following this pattern: "jackal, asiatic". Log the resut.
 */
+
+
+// converts array properties to multiple arrays and convert it to string and finally convert the string into lowercase
+
 function lowerCase(array) {
   return array.map((arr) => {
-    let string = arr.animal_name.split(" ").toString().toLowerCase();
-    return string.split("").join("");
+    return arr.animal_name.split(" ").toString().toLowerCase();
   });
 }
 console.log(lowerCase(zooAnimals));
@@ -96,6 +102,8 @@ The zoos are concerned about animals with a lower population count. Using filter
 array of objects called lowPopulationAnimals which contains only the animals with a population 
 less than 5. 
 */
+
+// use the filter method to access the properties of array and check to see if the population count is less than five
 
 function lowPopulationAnimals(array) {
   const newPopulation = array.filter(function (endangered) {
@@ -110,6 +118,14 @@ The zoos need to know their total animal population across the United States. Fi
 population from all the zoos using the .reduce() method. Remember the reduce method takes two 
 arguments: a callback (which itself takes two args), and an initial value for the count.
 */
+
+// first get the population count in array
+// declare new population count
+// declare new variable which will equal to the sum of all the animals in the zoo
+// use reduce method to make a function inside it that takes in starting point and end point as argument
+
+// adding the starting point and end point will add up everything in between and finally adding the declared 
+// new population count will be the initial point those two points add to
 
 function totalPopulation(array) {
   const population = array.map((arr) => {
@@ -135,6 +151,10 @@ console.log(totalPopulation(zooAnimals));
 // The first two parameters can take any argument (we can pass any value as argument)
 // The last parameter accepts a callback
 // The consume function should return the invocation of cb, passing a and b into cb as arguments
+
+// consume will take in 2 random arguments and finally the callback parameter
+// the consume function will return the 2 random arguments as the callback argument's argument
+// finally the callback argument function will call those 2 random arguments and use template literals to use those variables
 
 function invocation(value, valueTwo) {
   return `${value} ${valueTwo} ok`;
