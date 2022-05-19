@@ -17,21 +17,35 @@ function sortedArray(array) {
 }
 console.log(sortedArray([5, 7, 10, -10, 56]));
 
-/* 
-Exercise 2
+//Exercise 2
 
-Write a JavaScript function to find the largest of five numbers of array.  
-Sample numbers : -5, -2, -6, 0, -1 
-Output : 0 
+//Write a JavaScript function to find the largest of five numbers of array.
+//Sample numbers : -5, -2, -6, 0, -1
+//Output : 0
+function getLargest(array) {
+  let largest = 0;
+  for (let i = 0; i < array.length; i++) {
+    if (array[i] > largest) {
+      largest = array[i];
+    }
+  }
+  return largest;
+}
 
-Exercise 3
+console.log(getLargest([1, 3, 56, 52347, 365]));
+// console.log(getLargest([1, 3, 56234234, 52342347, 4324]));
+// console.log(getLargest([1, 3, 56234234, 5237, 3653]));
 
-Function that will return your string in Alphabetical order
+//Exercise 3
 
-Example:
-> console.log(AlphabeticalOrder('hello'));
-> "ehllo"
+//Function that will return your string in Alphabetical order
 
+//Example:
+//> console.log(AlphabeticalOrder('hello'));
+//> "ehllo"
+// function abcOrder
+
+/*
 Exercise 4
 
 Create a function that will display the smallest value in the array.
@@ -96,12 +110,12 @@ Example:
 > 1
 
 */
-const array = [1, 2, 3, 4, 5];
-array.map(function (element) {
-  console.log(element);
-});
+// const array = [1, 2, 3, 4, 5];
+// array.map(function (element) {
+//   console.log(element);
+// });
 
-const newArray = array.map(function (element) {
-  return element + 5;
-});
-console.log(newArray);
+// const newArray = array.map(function (element) {
+//   return element + 5;
+// });
+// console.log(newArray);
