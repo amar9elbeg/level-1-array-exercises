@@ -44,6 +44,11 @@ console.log(getLargest([1, 3, 56, 52347, 365]));
 //> console.log(AlphabeticalOrder('hello'));
 //> "ehllo"
 // function abcOrder
+function alphabet_order(str)
+  {
+return str.split('').sort().join('');
+  }
+console.log(alphabet_order("hello"));
 
 /*
 Exercise 4
