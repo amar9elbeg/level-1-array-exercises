@@ -50,22 +50,29 @@ return str.split('').sort().join('');
   }
 console.log(alphabet_order("hello"));
 
+
+//Exercise 4
+
+// Create a function that will display the smallest value in the array.
+
+//Example:
+//> console.log(findSmallest([30, 45, 60, 7]));
+//> 1
+const findSmallest = [14, 58, 20, 77, 66, 82, 42, 67, 42, 4]
+const min = findSmallest.reduce((a, b) => Math.min(a, b))
+console.log(min)
+
+//Exercise 5
+//Remove all Odd number(s) in an array and return a new array that contains Even numbers only
+
+//Example:
+// > console.log(evenOnly([1, 2, 3, 4, 5, 6]));
+// > [ 2, 4, 6 ]
+function findOdd(A) {
+  let counts = A.reduce((p, n) => (p[n] = ++p[n] || 1, p), {});
+  return +Object.keys(counts).find(k => counts[k] % 2) || undefined;
+}
 /*
-Exercise 4
-
-Create a function that will display the smallest value in the array.
-
-Example:
-> console.log(findSmallest([30, 45, 60, 7]));
-> 1
-
-Exercise 5
-Remove all Odd number(s) in an array and return a new array that contains Even numbers only
-
-Example:
-> console.log(evenOnly([1, 2, 3, 4, 5, 6]));
-> [ 2, 4, 6 ]
-
 Exercise 6 
 
 Create a function that will accept an array, check the data type of each element. The function will delete string elements and will return a the new array
