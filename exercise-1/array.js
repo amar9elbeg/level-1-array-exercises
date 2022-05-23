@@ -109,40 +109,49 @@ function minMaxLengthAverage(array) {
   const min = array.reduce((a, b) => Math.min(a, b));
   const highest = Math.max(array);
   const length = arr.length(array);
-  const average
+  const average = (array) => array.reduce((a, b) => a + b) / array.length;
 }
 console.log(minMaxLengthAverage(arr));
 
-/*
 
-Exercise 8 
 
-Count the number of Words
-Return how many words was given
+// Exercise 8 
 
-Example:
-> countWords('hello from kbpsystem!');
-> 3
+// Count the number of Words
+// Return how many words was given
 
-Exercise 9 
+// Example:
+// > countWords('hello from kbpsystem!');
+// > 3
+function countWords(str) { 
+  return str.split(" ").length;
+}
 
-Multiply by Length
-Multiply all elements in an array by it's length
+console.log(countWords("hello world"));
 
-Example:
-> MultiplyByLength([4,1,1]);
-> [12, 3, 3]
+// Exercise 9 
 
-Exercise 10
+// Multiply by Length
+// Multiply all elements in an array by it's length
 
-Find the correct Index location
-Return the index location of an element from a given array. First argument is the array you'd like to search and the second one is the element (either string/number) to look for.
+// Example:
+// > MultiplyByLength([4,1,1]);
+// > [12, 3, 3]
+const MultiplyByLength = array.reduce((previousValue,currrentValue) => {
+  return previousValue * currrentValue
+},1);
+console.log(MultiplyByLength);
 
-Example:
-> console.log(findIndex(['github', 'gitlab', 'bitbucket', 'apollo'], 'gitlab'));
-> 1
+// Exercise 10
 
-*/
+// Find the correct Index location
+// Return the index location of an element from a given array. First argument is the array you'd like to search and the second one is the element (either string/number) to look for.
+
+// Example:
+// > console.log(findIndex(['github', 'gitlab', 'bitbucket', 'apollo'], 'gitlab'));
+// > 1
+
+// */
 // const array = [1, 2, 3, 4, 5];
 // array.map(function (element) {
 //   console.log(element);
