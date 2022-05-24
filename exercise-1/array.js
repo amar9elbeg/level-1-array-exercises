@@ -9,7 +9,10 @@
 
 //     1. write function ==> function takes array as input
 //     2. sort the numbers inside the warray and return sorted array
-
+// function name sortedArray it takes array
+//return array.sort, make another function, it takes a,b
+//return b = a
+//then console log sorted Array, then make an array
 function sortedArray(array) {
   return array.sort(function (a, b) {
     return b - a;
@@ -22,6 +25,15 @@ console.log(sortedArray([5, 7, 10, -10, 56]));
 //Write a JavaScript function to find the largest of five numbers of array.
 //Sample numbers : -5, -2, -6, 0, -1
 //Output : 0
+
+// function name get largest, it takes array
+//creat variable largest (let) = 0
+// for let i equals 0 then i is less than array length i++
+//then iff array [i] is greater than array length i++
+//largest = array[i]
+//then return largest
+//console log getlargest and make an array of numbers
+
 function getLargest(array) {
   let largest = 0;
   for (let i = 0; i < array.length; i++) {
@@ -32,8 +44,7 @@ function getLargest(array) {
   return largest;
 }
 
-console.log(getLargest([1, 3, 56, 52347, 365]));
-// console.log(getLargest([1, 3, 56234234, 52342347, 4324]));
+console.log(getLargest([1, 3, 56234234, 52342347, 4324]));
 // console.log(getLargest([1, 3, 56234234, 5237, 3653]));
 
 //Exercise 3
@@ -44,10 +55,14 @@ console.log(getLargest([1, 3, 56, 52347, 365]));
 //> console.log(AlphabeticalOrder('hello'));
 //> "ehllo"
 // function abcOrder
-function alphabet_order(str) {
-  return str.split("").sort().join("");
-}
-console.log(alphabet_order("hello"));
+//funcion name abcOrder, it takes str
+// return str split ("") sort() join("")
+//then console log abcOrder, any text
+
+// function abcOrder(str) {
+//   return str.split(" ").sort(" ").join(" ");
+// }
+// console.log(abcOrder("tyler"));
 
 //Exercise 4
 
@@ -56,9 +71,18 @@ console.log(alphabet_order("hello"));
 //Example:
 //> console.log(findSmallest([30, 45, 60, 7]));
 //> 1
-const findSmallest = [14, 58, 20, 77, 66, 82, 42, 67, 42, 2, 4];
-const min = findSmallest.reduce((a, b) => Math.min(a, b));
-console.log(min);
+
+// const findSmallest = [ array of numbers]
+// const min equal to findsmallest then put reduce, it takes a,b => math.min takes a,b
+//then console log min
+
+// const findSmallest = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+// const min = findSmallest.reduce((a, b) => Math.min(a, b));
+function findSmallest(array) {
+  const min = array.reduce((a, b) => Math.min(a, b));
+  return min;
+}
+console.log(findSmallest([1, 3, 4, 5, 7]));
 
 //Exercise 5
 //Remove all Odd number(s) in an array and return a new array that contains Even numbers only
@@ -66,11 +90,18 @@ console.log(min);
 //Example:
 // > console.log(evenOnly([1, 2, 3, 4, 5, 6]));
 // > [ 2, 4, 6 ]
-let array1 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12];
+//create array1 = [make array of numbers]
+//create odds equal to array1 filter, it takes n, percent 2 is equal to 0
+//console log odds
 
-let odds = array1.filter((n) => n % 2 === 0);
+// function evenOnly(array) {
+//   // evenOnly = array.filter((n) => n % 2 === 0);
 
-console.log(odds);
+// }
+// console.log(evenOnly([1, 5, 6, 7, 8, 76]));
+// let array1 = [1, 32, 4, 5];
+// let odds = array.filter((n) => n % 2 === 0);
+//  console.log(odds);
 
 // Exercise 6
 
@@ -82,11 +113,6 @@ console.log(odds);
 //then const a name ex: filteredArray then we are gonna use the name we const the name  above
 // and add .filter that takes element => then return the type of element
 //that is not equal to string, after than console log filteredArray
-const array = ["hihi", 5, { name: "Hi" }];
-const filteredArray = array.filter((element) => {
-  return typeof element !== "string";
-});
-console.log(filteredArray);
 
 // Example:
 // > console.log(numbersOnly(['text', 3, 7, 'github', 13, 'dev']));
@@ -104,18 +130,24 @@ console.log(filteredArray);
 // Example:
 // > console.log(minMaxLengthAverage());
 // > [ 3, 100, 5, 40 ]
-const arr = [7, 13, 3, 77, 100];
+
+// const arr = [make array of numbers]
+// function name minMaxLengthAverage, it takes array
+// const min = array reduce, it takes a,b => math min, that takes a,b
+//const highest = math max, it take array
+//const length = array length
+//const average = array => array reduce, it takes a,b => a + b divided by array lenth
+//console log minMaxLengthAverage arr
+
 function minMaxLengthAverage(array) {
-  const min = array.reduce((a, b) => Math.min(a, b));
-  const highest = Math.max(array);
-  const length = arr.length(array);
-  const average = (array) => array.reduce((a, b) => a + b) / array.length;
+  const min = array.reduce(a, (b) => Math.min(a, b));
+  const highest = math.Max(array);
+  const length = array.length;
+  const average = (array) => array.reduce(a, (b) => a + b / array.length);
 }
-console.log(minMaxLengthAverage(arr));
+console.log(minMaxLengthAverage([1, 3, 5, "hi"]));
 
-
-
-// Exercise 8 
+// Exercise 8
 
 // Count the number of Words
 // Return how many words was given
@@ -123,13 +155,15 @@ console.log(minMaxLengthAverage(arr));
 // Example:
 // > countWords('hello from kbpsystem!');
 // > 3
-function countWords(str) { 
+//function name countWords, it takes str
+//return str split ("") length
+//console log count words (anytext)
+function countWords(str) {
   return str.split(" ").length;
 }
+console.log(countWords("hello my name is tyler"));
 
-console.log(countWords("hello world"));
-
-// Exercise 9 
+// Exercise 9
 
 // Multiply by Length
 // Multiply all elements in an array by it's length
@@ -137,15 +171,27 @@ console.log(countWords("hello world"));
 // Example:
 // > MultiplyByLength([4,1,1]);
 // > [12, 3, 3]
-const MultiplyByLength = array.reduce((previousValue,currrentValue) => {
-  return previousValue * currrentValue
-},1);
-console.log(MultiplyByLength);
+//function name is multiplyByLength, it takes array
+// const length then do array length
+// const newArray array map, arr =>
+// then we are gonna return arr times length
+//then return newArrays
+//console log multiplyByLength and make an array inside
+function multiplyByLength(array) {
+  const length = array.length;
+  const newArray = array.map(function (arr) {
+    return arr * length;
+  });
+  return newArray;
+}
+console.log(multiplyByLength([5, 67, 2, 4, 35]));
 
 // Exercise 10
 
 // Find the correct Index location
-// Return the index location of an element from a given array. First argument is the array you'd like to search and the second one is the element (either string/number) to look for.
+// Return the index location of an element from a given array.
+// First argument is the array you'd like to search and the second one is the element
+//(either string/number) to look for.
 
 // Example:
 // > console.log(findIndex(['github', 'gitlab', 'bitbucket', 'apollo'], 'gitlab'));
@@ -161,3 +207,16 @@ console.log(MultiplyByLength);
 //   return element + 5;
 // });
 // console.log(newArray);
+
+//function name is findIndex, it takes string, array
+// return array index of string
+// console log find index, then make array, outside of array type the word that you want
+//in string before the array
+
+//function name is index, it takes string, array
+//return the array index of string
+// console log find index ("hi", [make string in here])
+function findIndex(string, array) {
+  return array.indexOf(string);
+}
+console.log(findIndex("hi", ["bottle", "pc", "hi", "hello"]));
