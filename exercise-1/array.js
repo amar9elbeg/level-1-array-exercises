@@ -59,10 +59,10 @@ console.log(getLargest([1, 3, 56234234, 52342347, 4324]));
 // return str split ("") sort() join("")
 //then console log abcOrder, any text
 
-// function abcOrder(str) {
-//   return str.split(" ").sort(" ").join(" ");
-// }
-// console.log(abcOrder("tyler"));
+function abcOrder(str) {
+  return str.split("").sort().join("");
+}
+console.log(abcOrder("tyler"));
 
 //Exercise 4
 
@@ -94,6 +94,17 @@ console.log(findSmallest([1, 3, 4, 5, 7]));
 //create odds equal to array1 filter, it takes n, percent 2 is equal to 0
 //console log odds
 
+function splitOddAndEven(numbers) {
+  const odd = numbers.filter((number) => number % 2 === 1);
+  const even = numbers.filter((number) => number % 2 === 0);
+  const returnObject = {
+    odd,
+    even,
+  };
+
+  return returnObject;
+}
+
 // function evenOnly(array) {
 //   // evenOnly = array.filter((n) => n % 2 === 0);
 
@@ -113,6 +124,14 @@ console.log(findSmallest([1, 3, 4, 5, 7]));
 //then const a name ex: filteredArray then we are gonna use the name we const the name  above
 // and add .filter that takes element => then return the type of element
 //that is not equal to string, after than console log filteredArray
+
+function numbersOnly(string, arr) {
+  return arr.filter(function (element) {
+    return element != string;
+  });
+}
+
+console.log(numbersOnly("hello"[(5, 3, 5, "tyler", "hello")]));
 
 // Example:
 // > console.log(numbersOnly(['text', 3, 7, 'github', 13, 'dev']));

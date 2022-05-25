@@ -66,8 +66,12 @@ const zooAnimals = [
 ];
 
 /* Request 1: .forEach()
-The zoos want to display both the scientific name and the animal name in front of the habitats. Populate the displayNames array with only the animal_name and scientific_name of each animal. displayNames will be an array of strings, and each string should follow this pattern: "Name: Jackal, asiatic, Scientific: Canis aureus."
+The zoos want to display both the scientific name and the animal name in front of
+ the habitats. Populate the displayNames array with only the animal_name and scientific_name
+  of each animal. displayNames will be an array of strings, and each string should follow this
+   pattern: "Name: Jackal, asiatic, Scientific: Canis aureus."
 */
+
 
 /* Request 2: .map()
 The zoos need a list of all their animal's names (animal_name only) converted to lower case. Using map, create a new array of strings named lowCaseAnimalNames, each string following this pattern: "jackal, asiatic". Log the resut.
