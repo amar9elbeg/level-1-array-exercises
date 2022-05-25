@@ -73,9 +73,21 @@ The zoos want to display both the scientific name and the animal name in front o
 */
 
 
+
 /* Request 2: .map()
-The zoos need a list of all their animal's names (animal_name only) converted to lower case. Using map, create a new array of strings named lowCaseAnimalNames, each string following this pattern: "jackal, asiatic". Log the resut.
+The zoos need a list of all their animal's names (animal_name only)
+ converted to lower case. Using map, create a new array of strings named
+  lowCaseAnimalNames, each string following this pattern: "jackal, asiatic". Log the resut.
 */
+const arr = ['ONE', 'TWO', 'THREE'];
+
+const lower = arr.map(element => {
+  return element.toLowerCase();
+});
+
+console.log(lower);
+
+
 
 /* Request 3: .filter() 
 The zoos are concerned about animals with a lower population count. Using filter, create a new array of objects called lowPopulationAnimals which contains only the animals with a population less than 5.
