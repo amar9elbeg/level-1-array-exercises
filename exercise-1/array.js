@@ -172,13 +172,13 @@ console.log(findSmallest([1, 3, 4, 5, 7]));
 //const average = array => array reduce, it takes a,b => a + b divided by array lenth
 //console log minMaxLengthAverage arr
 
-function minMaxLengthAverage(array) {
-  const min = array.reduce(a, (b) => Math.min(a, b));
-  const highest = math.Max(array);
-  const length = array.length;
-  const average = (array) => array.reduce(a, (b) => a + b / array.length);
-}
-console.log(minMaxLengthAverage([1, 3, 5, "hi"]));
+// function minMaxLengthAverage(array) {
+//   const min = array.reduce(a, (b) => Math.min(a, b));
+//   const highest = math.Max(array);
+//   const length = array.length;
+//   const average = (array) => array.reduce(a, (b) => a + b / array.length);
+// }
+// console.log(minMaxLengthAverage([1, 3, 5, "hi"]));
 
 // Exercise 8
 
