@@ -141,3 +141,23 @@ console.log(totalPopulation(array))
 /*
 
 */
+function callback(a, b) {
+  return a + b;
+}
+function consume(a, b, cb) {
+  return cb(a, b);
+}
+console.log(consume(2, 3, callback));
+
+console.log(consume(3, 5, callback));
+
+function callback2(c, d) {
+  return c * d;
+}
+
+console.log(consume(3, 5, callback2));
+
+function greeting(a, b) {
+  return `Hello ${a} ${b}, nice to meet you!`;
+}
+console.log(greeting("Marry", "Poppins"));
