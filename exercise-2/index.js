@@ -13,6 +13,27 @@ console.log("its working");
 (d) Away Team goals for 2014 world cup final
 (e) Winner of 2014 world cup final */
 
+
+// note: The find() method returns the first element in the provided array that satisfies
+// the provided testing function. If no values satisfy the testing function, undefined is returned.
+
+
+const teamOf2014 = fifaData.filter((data) => {
+  return data.Year === 2014;
+});
+const homeTeamName = teamOf2014.find((data) => {
+  return data.Stage === "Finale";
+});
+console.log(homeTeamName["Home Team Name"]);
+const awayTeamName = teamOf2014.find((data) => {
+  return data.Stage === "Finale";
+});
+console.log(awayTeamName["Away Team Name"]);
+console.log(homeTeamName["Home Team Goals"]);
+console.log(awayTeamName["Away Team Goals"]);
+console.log(homeTeamName["Win conditions"]);
+
+
 /* Task 2: Create a function called  getFinals that takes `data` as an argument and returns an array of objects with only finals data */
 
 
