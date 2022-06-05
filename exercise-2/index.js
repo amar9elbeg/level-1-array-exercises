@@ -34,7 +34,7 @@ console.log(finalStage);
 
 /* Task 2: Create a function called  getFinals that takes `data` as an argument and returns
  an array of objects with only finals data */
- 
+
 function getFinals(data) {
   const finals = data.filter((data) => {
     return data.Stage === "Final";
@@ -55,20 +55,25 @@ console.log(getYears(fifaData, getFinals));
 /* Task 5: Implement a higher-order function called `getWinners`, that accepts the callback
  function `getFinals()` and determine the winner (home or away) of each `finals` game.
   Return the name of all winning countries in an array called `winners` */
-  function getWinners(data, callback) {
-    const winnersFinal = callback(data).map((final) => {
-      if (final["Away Team Goals"] > final["Home Team Goals"]) {
-        return final["Away Team Name"];
-      } else {
-        return final["Home Team Name"];
-      }
-    });
-    return winnersFinal;
-  }
-  console.log(getWinners(fifaData, getFinals));
+// if statement is saying that if away team goals is larger than hometeam goals
+// it returns away team name
+// if not it returns hometeam name
+function getWinners(data, callback) {
+  const winnersFinal = callback(data).map((final) => {
+    if (final["Away Team Goals"] > final["Home Team Goals"]) {
+      return `this the away team won ${final["Away Team Name"]}`;
+    } else {
+      return `this the home team won ${final["Home Team Name"]}`;
+    }
+  });
+  return winnersFinal;
+}
+
+console.log(getWinners(fifaData, getFinals));
 // Task 6: Implement a higher-order function called `getWinnersByYear`
 //  that accepts the following parameters and returns a set of strings "In {year},
-//   {country} won the world cup!" 
+//   {country} won the world cup!"
+//the for loop is console logging the teams that won the world cup
 function getWinnersByYear(callback, callback2) {
   const winners = callback(fifaData, getFinals);
   const years = callback2(fifaData, getFinals);
@@ -78,7 +83,7 @@ function getWinnersByYear(callback, callback2) {
 }
 console.log(getWinnersByYear(getWinners, getYears));
 
-// Parameters: 
+// Parameters:
 //  * callback function getWinners
 //  * callback function getYears
 //  */
