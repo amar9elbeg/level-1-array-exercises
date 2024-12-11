@@ -178,3 +178,62 @@ var movieDatabase = {
   stars: ["Bruce Willis", "Uma Thurman"],
 };
 // write the function to return Movie name and duration and start
+
+// Create an object to hold information on your favorite recipe. It should have properties for title (a string), servings (a number), and ingredients (an array of strings).
+// const recipe = {
+//   title: "Mole",
+//   servings: 2,
+//   ingredients: ["cumin", "cinnamon", "cocoa"],
+// };
+// console.log title of the recipe
+// console.log 'Servings: recipe servings'
+//console.log the ingredients one by one
+
+// //Task2
+
+// let programming = {
+//   languages: ["JavaScript", "Python", "Ruby"],
+//   isChallenging: true,
+//   isRewarding: true,
+//   difficulty: 8,
+//   jokes:
+//     "http://stackoverflow.com/questions/234075/what-is-your-best-programmer-joke",
+// };
+
+// Write the command to add the language "Go" to the end of the languages array.
+// Change the difficulty to the value of 7.
+// Using the delete keyword, write the command to remove the jokes key from the programming object.
+// Write the command to add a new key called isFun and a value of true to the programming object.
+// Using a loop, iterate through the languages array and console.log all of the languages.
+// Using a loop, console.log all of the keys in the programming object.
+// Using a loop, console.log all of the values in the programming object.
+
+// /Menu Items (MVP)///////////////////
+
+// const latte = {
+//   name: "Cafe Latte",
+//   price: 4,
+//   category: "Drinks",
+// };
+
+// const burger = { name: "Burger", price: 18, category: "Lunch" };
+// const breakfastBurrito = {
+//   name: "Breakfast Burrito",
+//   price: 16,
+//   category: "Breakfast",
+// };
+
+// /* Task 1a: write a function to return more menu items with the same format as the items above. */
+
+// console.log(createMenuItem("Buuz", 45, "Breakfast"));
+// console.log(createMenuItem("Buuz", 45, "Breakfast"));
+// console.log(createMenuItem("Buuz", 45, "Breakfast"));
+// console.log(createMenuItem("Buuz", 45, "Breakfast"));
+// console.log(createMenuItem("Coffee", 5, "Dinner"));
+// /* Task 1b: use your function to create 3 more menu items. You may add any items to the menu that you'd like */
+
+// /* Task 2: You're having a lunch special! 25% off for teachers and students, 10% off for everyone else. Add a method to your burger object that automatically calculates price given a string as a parameter.
+
+// console.log(burger.discount("student"));
+// console.log(burger.discount("public"));
+// c;
